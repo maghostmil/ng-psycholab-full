@@ -1,0 +1,62 @@
+  .grid-row {
+    display: flex;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+  }
+  
+  .grid-col {
+    display: inline-block;
+  }
+  .score-wrap{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 50px;
+  }
+  
+  #score, #misses, #time {
+    display: block;
+  }
+  
+  .game-over {
+    position: absolute;
+    top: 45vh;
+    left: calc(50vw - 125px);
+    width: 250px;
+    background: #fff;
+    border: 2px solid;
+    text-align: center;
+    color: #212529;
+  }
+  
+
+  .btn-primary {
+    margin-left: 1vw;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  margin-left: 1vw;
+}
+
+.btn.active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: rgb(212, 233, 23) !important;
+}
+
+.btn {
+  width: 5vw;
+  height: 5vw;
+}
+
+.row {
+  margin-right: 0px; 
+}

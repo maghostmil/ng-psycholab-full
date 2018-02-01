@@ -1,0 +1,97 @@
+<div class="game-wrap">
+  <div class="row" style="margin-left: 7.6vw">
+    <div class="col-md-1">
+      <div class="grid top">
+        <div class="grid-row">
+          <div class="grid-col" *ngFor='let col of cols'>
+            <app-buttons [col]="col" [primary]="false" (click)='btnClick($event)'></app-buttons>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <div class="grid side" style="margin-left: 1vw;">
+        <div class="grid-row" *ngFor='let row of rows'>
+          <div class="grid-col">
+            <app-buttons [row]="row" [primary]="false" (click)='btnClick($event)'></app-buttons>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="grid mid">
+        <div class="grid-row" *ngFor='let row of rows'>
+          <div class="grid-col" *ngFor='let col of cols'>
+            <app-buttons [row]="row" [col]="col" [primary]="true" (click)='btnClick($event)'></app-buttons>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1" style="margin-left: -2.5vw;">
+      <div class="grid side">
+        <div class="grid-row" *ngFor='let row of rows'>
+          <div class="grid-col">
+            <app-buttons [row]="row+5" [primary]="false" (click)='btnClick($event)'></app-buttons>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div class="row" style="margin-left: 7.6vw">
+    <div class="col-md-1">
+      <div class="grid top">
+        <div class="grid-row">
+          <div class="grid-col" *ngFor='let col of cols'>
+            <app-buttons [col]="col+5" [primary]="false" (click)='btnClick($event)'></app-buttons>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div *ngIf="!Timer" class="game-over">
+    <h1>Brakło Ci czasu gościu!</h1>
+  </div>
+</div>
+
+<div class="score-wrap text-uppercase text-center">
+
+  <div class="row">
+      <table class="table">
+          <tbody>
+              <tr>
+                  <td>Czas</td>
+                  <td>{{ time }}</td>
+              </tr>
+
+              <tr>
+                  <td>Uderzeń</td>
+                  <td>{{ hits }}</td>
+              </tr>
+
+              <tr>
+                  <td>Chybione</td>
+                  <td>{{ misses }}</td>
+              </tr>
+          </tbody>
+        </table>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button (click)="Refresh()" class="btn btn-success btn-lg">Restart</button>
+      <button routerLink="/menu" class="btn btn-danger btn-lg">Powrót</button>
+    </div>
+  </div>
+</div>

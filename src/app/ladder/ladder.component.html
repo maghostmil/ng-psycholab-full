@@ -1,0 +1,23 @@
+<div id="col-lg-4"></div>
+<div id="col-lg-4">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Użytkownik</th>
+      <th>Rozegrano gier</th>
+      <th>Punkty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userData">
+      <td>{{user.user}}</td>
+      <td>{{user.played}}</td>
+      <td>{{user.points}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button routerLink="/menu" class="btn btn-lg btn-danger">Wróć do menu</button>
+<div id="col-lg-4"></div>
+
+</div>
